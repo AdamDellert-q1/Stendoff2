@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standoff 2 Payment</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="background">
+    <div class="blur purple"></div>
+    <div class="blur orange"></div>
+</div>
+
+
+
+<div class="payment-window">
+
+    <img src="https://wanja01yt.github.io/standoff2-online/logo.png" class="logo" alt="Standoff 2">
+
+    <div class="payment-title">
+        ОПЛАТА КАРТОЙ
+    </div>
+
+    <div class="payment-result">
+
+        <div class="graffiti"></div>
+
+        <div class="check">
+            <svg viewBox="0 0 24 24">
+                <path d="M20 6L9 17L4 12"/>
+            </svg>
+        </div>
+
+        <h1>
+            ОПЛАТА ПРОШЛА<br>
+            УСПЕШНО!
+        </h1>
+
+        <p class="transaction">
+            Номер транзакции:
+        </p>
+
+        <p class="id" id="transactionId">
+    pm_58774513
+</p>
+
+    </div>
+
+    <button class="back-button">
+        ВЕРНУТЬСЯ В МАГАЗИН
+    </button>
+
+</div>
+
+<div class="footer">
+    AXLEBOLT
+</div>
+
+<style>*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#3c4558;
+    position:relative;
+}
+
+/* ---------- Фон ---------- */
+
+.background{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg,#596274 0%,#394256 100%);
+    overflow:hidden;
+}
+
+.blur{
+    position:absolute;
+    width:450px;
+    height:450px;
+    border-radius:50%;
+    filter:blur(140px);
+    opacity:.45;
+}
+
+.blur.purple{
+    left:22%;
+    top:32%;
+    background:#a73cff;
+}
+
+.blur.orange{
+    right:24%;
+    top:45%;
+    background:#ff8d1e;
+}
+
+/* ---------- Карточка ---------- */
+
+.payment-window{
+
+    position:relative;
+
+    width:385px;
+
+    padding:28px;
+
+    z-index:5;
+}
+
+
+
+/* ---------- Логотип ---------- */
+
+.logo{
+
+    width:400px;
+
+    display:block;
+
+    margin:0 auto 35px -35px;
+
+    user-select:none;
+
+}
+
+/* ---------- Заголовок ---------- */
+
+.payment-title{
+
+    color:#fff;
+
+    text-align:center;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    letter-spacing:1.8px;
+
+    margin-bottom:18px;
+
+}
+
+/* ---------- Синий блок ---------- */
+
+.payment-result{
+
+    position:relative;
+
+    background:#23274d;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    padding:38px 25px 42px;
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+}
+
+/* граффити */
+
+.graffiti{
+
+    position:absolute;
+
+    right:-18px;
+
+    bottom:-8px;
+
+    width:165px;
+
+    height:165px;
+
+    background:url("graffiti.png") center/contain no-repeat;
+
+    opacity:.09;
+
+    pointer-events:none;
+
+}
+
+/* ---------- Галочка ---------- */
+
+.check{
+
+    width:60px;
+
+    height:60px;
+
+    margin:0 auto 18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.check svg{
+
+    width:38px;
+
+    height:38px;
+
+    fill:none;
+
+    stroke:white;
+
+    stroke-width:2.8;
+
+    stroke-linecap:round;
+
+    stroke-linejoin:round;
+
+}
+
+/* ---------- Заголовок ---------- */
+
+.payment-result h1{
+
+    color:#ffffff;
+
+    font-size:32px;
+
+    font-weight:800;
+
+    line-height:1.1;
+
+    letter-spacing:1px;
+
+    margin-bottom:28px;
+
+    text-transform:uppercase;
+
+}
+
+/* ---------- Текст ---------- */
+
+.transaction{
+
+    color:#c7cad8;
+
+    font-size:17px;
+
+    font-weight:500;
+
+    margin-bottom:6px;
+
+}
+
+.id{
+
+    color:#ffffff;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    letter-spacing:.5px;
+
+}
+
+/* ---------- Кнопка ---------- */
+
+.back-button{
+
+    width:100%;
+
+    height:58px;
+
+    border:none;
+
+    border-radius:3px;
+
+    background:#F5B13E;
+
+    color:#ffffff;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    letter-spacing:.8px;
+
+    cursor:pointer;
+
+    transition:.2s ease;
+
+    text-transform:uppercase;
+
+}
+
+.back-button:hover{
+
+    background:#ffbf55;
+
+}
+
+.back-button:active{
+
+    transform:scale(.98);
+
+}
+
+/* ---------- Подвал ---------- */
+
+.footer{
+
+    position:absolute;
+
+    bottom:30px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:rgba(255,255,255,.18);
+
+    font-size:48px;
+
+    font-weight:300;
+
+    letter-spacing:8px;
+
+    user-select:none;
+
+}
+
+/* ---------- Адаптивность ---------- */
+
+@media (max-width:480px){
+
+.payment-window{
+
+    width:92%;
+
+    padding:22px;
+
+}
+
+.logo{
+
+    width:150px;
+
+}
+
+.payment-result{
+
+    padding:34px 18px;
+
+}
+
+.payment-result h1{
+
+    font-size:27px;
+
+}
+
+.transaction{
+
+    font-size:15px;
+
+}
+
+.id{
+
+    font-size:18px;
+
+}
+
+.back-button{
+
+    height:54px;
+
+    font-size:16px;
+
+}
+
+.footer{
+
+    font-size:34px;
+
+    letter-spacing:5px;
+
+}
+
+}
+
+
+.check{
+    width:60px;
+    height:60px;
+    margin:0 auto 18px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.check svg{
+    width:38px;
+    height:38px;
+    fill:none;
+    stroke:white;
+    stroke-width:2.8;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+
+    stroke-dasharray:60;
+    stroke-dashoffset:60;
+
+    animation:drawCheck .8s ease forwards;
+}
+
+@keyframes drawCheck{
+
+    0%{
+        stroke-dashoffset:60;
+        transform:scale(.7);
+        opacity:0;
+    }
+
+    60%{
+        opacity:1;
+    }
+
+    100%{
+        stroke-dashoffset:0;
+        transform:scale(1);
+        opacity:1;
+    }
+
+}
+
+.check svg{
+    width:38px;
+    height:38px;
+    fill:none;
+    stroke:white;
+    stroke-width:2.8;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+
+    stroke-dasharray:60;
+    stroke-dashoffset:60;
+
+    animation: drawCheck 1.8s ease-in-out forwards;
+}
+
+@keyframes drawCheck{
+    0%{
+        stroke-dashoffset:60;
+        transform:scale(.6);
+        opacity:0;
+    }
+
+    30%{
+        opacity:1;
+    }
+
+    70%{
+        transform:scale(1.08);
+    }
+
+    100%{
+        stroke-dashoffset:0;
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+</style>
+
+<script>const transaction = document.getElementById("transactionId");
+
+function randomTransaction() {
+
+    const number = Math.floor(
+        10000000 + Math.random() * 90000000
+    );
+
+    transaction.textContent = "pm_" + number;
+
+}
+
+randomTransaction();
+
+
+setInterval(randomTransaction, 15000);
+
+document.querySelector(".back-button").addEventListener("click", () => {
+
+    window.location.href = "https://store.standoff2.com/en-RU";
+
+});</script>
+</body>
+</html>
